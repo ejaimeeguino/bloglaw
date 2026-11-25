@@ -108,11 +108,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-<<<<<<< HEAD
     gap: 18px;
-=======
-    gap: 20px;
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
     align-items: center;
 }
 
@@ -121,18 +117,13 @@ body {
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
-<<<<<<< HEAD
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-=======
-    transition: color 0.2s;
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
 }
 
 .nav-links a:hover {
     color: var(--dorado-claro);
 }
 
-<<<<<<< HEAD
 .nav-links a.nav-chat-distinct {
     color: #22d3ee;
     background: rgba(6, 182, 212, 0.14);
@@ -147,8 +138,6 @@ body {
     border-color: #22d3ee;
 }
 
-=======
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
 .nav-links .nav-cta {
     background: var(--dorado);
     color: var(--azul-oscuro);
@@ -544,7 +533,6 @@ body {
     font-size: 0.9rem;
 }
 
-<<<<<<< HEAD
 /* ===== 5B. CUADRO DE DIÁLOGO VISTOSO Y AJUSTABLE ===== */
 .dialog-workspace {
     max-width: 1150px;
@@ -895,8 +883,6 @@ body {
     color: var(--texto-secundario);
 }
 
-=======
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
 /* ===== 6. CONTACTO Y BINANCE PAY ===== */
 .grid-contacto-pago {
     max-width: 1150px;
@@ -1133,13 +1119,8 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
-<<<<<<< HEAD
     .galeria-tli, .grid-inversion, .dialog-workspace {
         grid-template-columns: 1fr;
-=======
-    .galeria-tli, .grid-inversion {
-        grid-template-columns: repeat(2, 1fr);
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
     }
     .grid-contacto-pago {
         grid-template-columns: 1fr;
@@ -1180,10 +1161,7 @@ footer {
     .bloque-seccion {
         padding: 45px 15px;
     }
-<<<<<<< HEAD
     .dialog-form-card, .dialog-panel-card {
         padding: 16px;
     }
-=======
->>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
 }
