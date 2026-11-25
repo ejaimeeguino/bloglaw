@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+<<<<<<< HEAD
     const STORAGE_KEY = 'pytli_dialog_history_v4';
     const APP_WHATSAPP = '59170617170';
     const MAX_DIALOG_CHARS = 250;
 
+=======
+>>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
     // 1. Menú hamburguesa para smartphones
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -12,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
 
+<<<<<<< HEAD
+=======
+        // Cerrar menú automáticamente al hacer clic en cualquier opción
+>>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -66,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+<<<<<<< HEAD
 
     // 4. Cuadro de diálogo (Derecho Informático)
     const liveClockEl = document.getElementById('dialogLiveClock');
@@ -415,4 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateCaptcha();
     updateCharCounter();
     renderDialogMessages();
+=======
+>>>>>>> 3419b75a9f9573d9232532bbcad2987565e2817e
 });
