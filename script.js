@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+<<<<<<< HEAD
     const STORAGE_KEY = 'pytli_dialog_history_v8';
     const APP_WHATSAPP = '59170617170';
     const MAX_DIALOG_CHARS = 250;
@@ -53,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+=======
+    const STORAGE_KEY = 'pytli_dialog_history_v4';
+    const APP_WHATSAPP = '59170617170';
+    const MAX_DIALOG_CHARS = 250;
+
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     // 1. Menú hamburguesa para smartphones
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -117,7 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+<<<<<<< HEAD
     // 4. Cuadro de diálogo (Chat Analítico - Derecho Informático)
+=======
+    // 4. Cuadro de diálogo (Derecho Informático)
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     const liveClockEl = document.getElementById('dialogLiveClock');
     const captchaQuestionEl = document.getElementById('captchaQuestion');
     const captchaInputEl = document.getElementById('captchaInput');
@@ -126,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const captchaStatusEl = document.getElementById('captchaStatus');
     const fieldsetEl = document.getElementById('dialogFieldsFieldset');
     const formEl = document.getElementById('adminDialogForm');
+<<<<<<< HEAD
     const subjectHiddenEl = document.getElementById('dialogSubject');
     const subjectDropdownToggleEl = document.getElementById('subjectDropdownToggle');
     const subjectDropdownTextEl = document.getElementById('subjectDropdownText');
@@ -136,16 +148,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const subSubjectLabelEl = document.getElementById('subSubjectLabel');
     const subSubjectListEl = document.getElementById('subSubjectList');
     const selectedSubSubjectHintEl = document.getElementById('selectedSubSubjectHint');
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     const dialogContentEl = document.getElementById('dialogContent');
     const charCounterEl = document.getElementById('dialogCharCounter');
     const messagesEl = document.getElementById('dialogMessages');
     const decisionBoxEl = document.getElementById('dialogDecisionBox');
+<<<<<<< HEAD
     const sendAppWhatsappBtnEl = document.getElementById('sendAppWhatsappBtn');
+=======
+    const downloadBtnEl = document.getElementById('downloadLastFileBtn');
+    const sendAppWhatsappBtnEl = document.getElementById('sendAppWhatsappBtn');
+    const declineAppWhatsappBtnEl = document.getElementById('declineAppWhatsappBtn');
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     const decisionStatusEl = document.getElementById('whatsappDecisionStatus');
     const clearHistoryBtnEl = document.getElementById('clearDialogHistoryBtn');
 
     let expectedCaptchaAnswer = 0;
     let isCaptchaVerified = false;
+<<<<<<< HEAD
     let selectedSubSubjects = [];
 
     function setSubjectDropdownOpen(isOpen) {
@@ -274,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 
     function buildResponseNotice(emitterWhatsapp) {
         return `En el plazo de 24 horas, Ud. recibirá la respuesta de su solicitud al WhatsApp registrado (${emitterWhatsapp}).`;
@@ -295,7 +318,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fieldsetEl) {
             fieldsetEl.disabled = true;
         }
+<<<<<<< HEAD
         setSubjectDropdownOpen(false);
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
         if (captchaStatusEl) {
             captchaStatusEl.textContent = 'Resuelva y valide el CAPTCHA para habilitar el formulario.';
             captchaStatusEl.className = 'captcha-status locked';
@@ -316,7 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             isCaptchaVerified = false;
             if (fieldsetEl) fieldsetEl.disabled = true;
+<<<<<<< HEAD
             setSubjectDropdownOpen(false);
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             if (captchaStatusEl) {
                 captchaStatusEl.textContent = 'Respuesta incorrecta. Intente nuevamente o genere un nuevo CAPTCHA.';
                 captchaStatusEl.className = 'captcha-status locked';
@@ -397,6 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .slice(0, 40) || 'registro';
     }
 
+<<<<<<< HEAD
     function formatSubSubjectsForDisplay(subList) {
         return Array.isArray(subList) && subList.length
             ? subList.map(s => `- ${s}`).join(' | ')
@@ -408,6 +438,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ? item.subSubjects.map(s => `  - ${s}`).join('\n')
             : '  - No especificada';
 
+=======
+    function buildFormFileContent(item, index) {
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
         return [
             '================================================================',
             `FORMULARIO DE DIÁLOGO — DERECHO INFORMÁTICO (REGISTRO #${index + 1})`,
@@ -415,8 +448,11 @@ document.addEventListener('DOMContentLoaded', () => {
             `Fecha y hora         : ${item.dateTime}`,
             `Título del diálogo   : ${item.dialogTitle}`,
             `Asunto               : ${item.subject}`,
+<<<<<<< HEAD
             'Opciones del asunto  :',
             subLines,
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             `Emisor               : ${item.userName}`,
             `WhatsApp del emisor  : ${item.userWhatsapp}`,
             `Correo electrónico   : ${item.userEmail}`,
@@ -450,13 +486,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function buildAppWhatsappUrl(item) {
+<<<<<<< HEAD
         const subText = formatSubSubjectsForDisplay(item.subSubjects);
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
         const msg =
             `FORMULARIO DERECHO INFORMÁTICO\n` +
             `Fecha y hora: ${item.dateTime}\n` +
             `Título: ${item.dialogTitle}\n` +
             `Asunto: ${item.subject}\n` +
+<<<<<<< HEAD
             `Opciones elegidas: ${subText}\n` +
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             `Emisor: ${item.userName} (WhatsApp: ${item.userWhatsapp} | Correo: ${item.userEmail})\n` +
             `Organización: ${item.userCompany || 'No especificada'}\n` +
             `Contenido: ${item.dialogContent}\n` +
@@ -489,7 +531,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const body = document.createElement('div');
             body.textContent =
+<<<<<<< HEAD
                 `Opciones del asunto: ${formatSubSubjectsForDisplay(item.subSubjects)}\n` +
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
                 `Título del diálogo: ${item.dialogTitle}\n` +
                 `WhatsApp del emisor: ${item.userWhatsapp}\n` +
                 `Contenido: ${item.dialogContent}`;
@@ -519,7 +564,11 @@ document.addEventListener('DOMContentLoaded', () => {
             decisionBoxEl.hidden = false;
             sendAppWhatsappBtnEl.href = buildAppWhatsappUrl(latestRecord);
             if (decisionStatusEl) {
+<<<<<<< HEAD
                 decisionStatusEl.textContent = latestRecord.whatsappChoice || 'Archivo .txt descargado automáticamente en su PC. Puede enviarlo al WhatsApp +59170617170 si lo desea.';
+=======
+                decisionStatusEl.textContent = latestRecord.whatsappChoice || 'Archivo guardado en su PC. Elija si desea enviarlo al WhatsApp +59170617170.';
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             }
         }
     }
@@ -537,11 +586,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const userWhatsapp = document.getElementById('userWhatsapp')?.value.trim() || '';
             const userEmail = document.getElementById('userEmail')?.value.trim() || '';
             const userCompany = document.getElementById('userCompany')?.value.trim() || '';
+<<<<<<< HEAD
             const subject = subjectHiddenEl?.value.trim() || '';
+=======
+            const subject = document.getElementById('dialogSubject')?.value.trim() || '';
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             const dialogTitle = document.getElementById('dialogTitle')?.value.trim() || '';
             const dialogContentRaw = document.getElementById('dialogContent')?.value.trim() || '';
             const dialogContent = dialogContentRaw.slice(0, MAX_DIALOG_CHARS);
 
+<<<<<<< HEAD
             if (!subject) {
                 setSubjectDropdownOpen(true);
                 if (selectedSubjectHintEl) {
@@ -560,6 +614,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (!userName || !userWhatsapp || !userEmail || !dialogTitle || !dialogContent) {
+=======
+            if (!userName || !userWhatsapp || !userEmail || !subject || !dialogTitle || !dialogContent) {
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
                 return;
             }
 
@@ -573,11 +630,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 userEmail,
                 userCompany,
                 subject,
+<<<<<<< HEAD
                 subSubjects: [...selectedSubSubjects],
                 dialogTitle,
                 dialogContent,
                 notice,
                 whatsappChoice: 'Archivo .txt descargado automáticamente en su PC. Si lo desea, envíe el formulario al WhatsApp +59170617170.'
+=======
+                dialogTitle,
+                dialogContent,
+                notice,
+                whatsappChoice: 'Archivo descargado en su PC. Usted decide si envía el formulario al WhatsApp +59170617170.'
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             };
 
             entries.push(record);
@@ -587,12 +651,26 @@ document.addEventListener('DOMContentLoaded', () => {
             downloadFormFile(entries, record);
 
             formEl.reset();
+<<<<<<< HEAD
             resetSubjectSelection();
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
             updateCharCounter();
             generateCaptcha();
         });
     }
 
+<<<<<<< HEAD
+=======
+    if (downloadBtnEl) {
+        downloadBtnEl.addEventListener('click', () => {
+            if (latestRecord && entries.length) {
+                downloadFormFile(entries, latestRecord);
+            }
+        });
+    }
+
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     if (sendAppWhatsappBtnEl) {
         sendAppWhatsappBtnEl.addEventListener('click', () => {
             if (latestRecord) {
@@ -605,6 +683,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+<<<<<<< HEAD
+=======
+    if (declineAppWhatsappBtnEl) {
+        declineAppWhatsappBtnEl.addEventListener('click', () => {
+            if (latestRecord) {
+                latestRecord.whatsappChoice = 'Usted decidió no enviar el formulario al WhatsApp de la aplicación; su archivo quedó descargado en su PC.';
+                saveEntries(entries);
+                if (decisionStatusEl) {
+                    decisionStatusEl.textContent = latestRecord.whatsappChoice;
+                }
+            }
+        });
+    }
+
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     if (clearHistoryBtnEl) {
         clearHistoryBtnEl.addEventListener('click', () => {
             entries = [];
@@ -614,7 +707,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+<<<<<<< HEAD
     resetSubjectSelection();
+=======
+>>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     generateCaptcha();
     updateCharCounter();
     renderDialogMessages();
