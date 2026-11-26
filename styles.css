@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --azul-oscuro: #0f172a;
     --azul-corporativo: #1e3a8a;
     --azul-acento: #2563eb;
@@ -31,7 +31,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== BOTONES FLOTANTES MÓVIL Y ESCRITORIO ===== */
 .floating-actions {
     position: fixed;
     bottom: 15px;
@@ -74,7 +73,6 @@ body {
     fill: currentColor;
 }
 
-/* ===== NAVBAR STICKY ===== */
 .navbar-sticky {
     position: sticky;
     top: 0;
@@ -155,7 +153,6 @@ body {
     cursor: pointer;
 }
 
-/* ===== HERO SECTION ===== */
 .hero-section {
     background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-corporativo) 100%);
     color: var(--blanco);
@@ -224,7 +221,6 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-/* ===== SECCIONES GENERALES ===== */
 .bloque-seccion {
     padding: 60px 20px;
 }
@@ -262,7 +258,6 @@ body {
     font-size: 0.98rem;
 }
 
-/* ===== 1. RIESGOS ===== */
 .grid-riesgos {
     max-width: 1150px;
     margin: 0 auto;
@@ -295,7 +290,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===== 2. GALERÍA TLI ===== */
 .galeria-tli {
     max-width: 1150px;
     margin: 0 auto;
@@ -353,7 +347,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===== 3. TIMELINE FASES ===== */
 .timeline-fases {
     max-width: 900px;
     margin: 0 auto;
@@ -402,7 +395,6 @@ body {
     margin-bottom: 4px;
 }
 
-/* ===== 4. MODELOS DE INVERSIÓN ===== */
 .grid-inversion {
     max-width: 1150px;
     margin: 0 auto;
@@ -483,7 +475,6 @@ body {
     color: var(--blanco);
 }
 
-/* ===== 5. ACORDEÓN EXPERTICIA ===== */
 .acordeon-experticia {
     max-width: 900px;
     margin: 0 auto;
@@ -536,7 +527,55 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===== 5B. CUADRO DE DIÁLOGO VISTOSO Y AJUSTABLE ===== */
+.ai-law-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-top: 4px solid var(--dorado);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.ai-law-config {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.ai-key-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.ai-key-row input {
+    flex: 1;
+    min-width: 220px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 9px 11px;
+    font-size: 0.88rem;
+}
+
+.ai-law-response {
+    margin-top: 18px;
+    background: var(--gris-fondo);
+    border: 1px solid var(--gris-borde);
+    border-left: 4px solid var(--azul-corporativo);
+    border-radius: 10px;
+    padding: 16px;
+    white-space: pre-line;
+}
+
+.ai-law-response p {
+    margin-top: 6px;
+    color: var(--texto-principal);
+    font-size: 0.92rem;
+}
+
 .dialog-workspace {
     max-width: 1150px;
     margin: 0 auto;
@@ -705,7 +744,6 @@ body {
     color: var(--texto-principal);
 }
 
-/* Cuadro desplegable de Asunto (con la misma estética que Opciones dependientes) */
 .subject-dropdown-box {
     background: #f8fafc;
     border: 1px solid #93c5fd;
@@ -810,7 +848,6 @@ body {
     color: #1d4ed8;
 }
 
-/* Subcuadro dependiente del asunto seleccionado */
 .subsubject-box {
     background: #f8fafc;
     border: 1px solid #93c5fd;
@@ -1024,7 +1061,6 @@ body {
     color: var(--texto-secundario);
 }
 
-/* ===== 6. CONTACTO Y BINANCE PAY ===== */
 .grid-contacto-pago {
     max-width: 1150px;
     margin: 0 auto;
@@ -1180,7 +1216,6 @@ body {
     font-weight: 600;
 }
 
-/* ===== FOOTER Y MODALES ===== */
 footer {
     background: var(--azul-oscuro);
     color: var(--blanco);
@@ -1258,7 +1293,6 @@ footer {
     font-size: 0.85rem;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
     .galeria-tli, .grid-inversion, .dialog-workspace {
         grid-template-columns: 1fr;

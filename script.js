@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'pytli_dialog_history_v8';
     const APP_WHATSAPP = '59170617170';
     const MAX_DIALOG_CHARS = 250;
 
-    // Opciones dependientes exactas según ExperticiaProfesional.pdf
     const SUBSUBJECT_OPTIONS = {
         'Tecnologías Legales Inteligentes:': [
             'Proceso de Análisis de diligencia debida documental (Due Diligence Documental) asociada a todo el entorno de las Tecnologías de la Información (Auditoría Integral de IT-Legal)',
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    // 1. Menú hamburguesa para smartphones
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -69,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Copiar Binance UID al portapapeles
     const btnCopiar = document.getElementById('btn-copiar-uid');
     if (btnCopiar) {
         btnCopiar.addEventListener('click', () => {
@@ -89,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Modales nativos (<dialog>)
     document.querySelectorAll('.link-modal').forEach(boton => {
         boton.addEventListener('click', () => {
             const modalId = boton.getAttribute('data-modal');
@@ -117,7 +113,108 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Cuadro de diálogo (Chat Analítico - Derecho Informático)
+    // AI en Derecho Informático (anclada exclusivamente a la pestaña Experticia)
+    const API_KEY_STORAGE = 'bloglaw_gemini_api_key_v1';
+    const GEMINI_MODEL = 'gemini-3.5-flash-lite';
+    const apiKeyInputEl = document.getElementById('geminiApiKeyInput');
+    const saveApiKeyBtnEl = document.getElementById('saveApiKeyBtn');
+    const apiKeyStatusTextEl = document.getElementById('apiKeyStatusText');
+    const aiPromptInputEl = document.getElementById('aiLegalPromptInput');
+    const askAiBtnEl = document.getElementById('askLegalAiBtn');
+    const aiResponseTextEl = document.getElementById('aiLegalResponseText');
+
+    function getExperticiaCatalogText() {
+        const blocks = Array.from(document.querySelectorAll('#experticia details'));
+        if (!blocks.length) return '';
+        return blocks.map(det => {
+            const area = det.querySelector('summary')?.innerText.trim() || '';
+            const items = Array.from(det.querySelectorAll('li')).map(li => `- ${li.innerText.trim()}`);
+            return `${area}\n${items.join('\n')}`;
+        }).join('\n\n');
+    }
+
+    const savedKey = localStorage.getItem(API_KEY_STORAGE) || '';
+    if (apiKeyInputEl && savedKey) {
+        apiKeyInputEl.value = savedKey;
+        if (apiKeyStatusTextEl) {
+            apiKeyStatusTextEl.textContent = 'Clave cargada desde este navegador.';
+        }
+    }
+
+    if (saveApiKeyBtnEl && apiKeyInputEl) {
+        saveApiKeyBtnEl.addEventListener('click', () => {
+            const keyVal = apiKeyInputEl.value.trim();
+            if (!keyVal) return;
+            localStorage.setItem(API_KEY_STORAGE, keyVal);
+            if (apiKeyStatusTextEl) {
+                apiKeyStatusTextEl.textContent = 'Clave guardada localmente en este navegador.';
+            }
+        });
+    }
+
+    if (askAiBtnEl && aiPromptInputEl && aiResponseTextEl) {
+        askAiBtnEl.addEventListener('click', async () => {
+            const keyVal = (apiKeyInputEl?.value || localStorage.getItem(API_KEY_STORAGE) || '').trim();
+            const userQuestion = aiPromptInputEl.value.trim();
+
+            if (!keyVal) {
+                aiResponseTextEl.textContent = 'Primero ingresa y guarda tu API Key de Google AI Studio.';
+                return;
+            }
+            if (!userQuestion) {
+                aiResponseTextEl.textContent = 'Por favor escribe una consulta sobre Derecho Informático.';
+                return;
+            }
+
+            const experticiaBase = getExperticiaCatalogText();
+            const systemInstruction = [
+                'Eres un asistente especializado EXCLUSIVAMENTE en Derecho Informático y Tecnologías Legales Inteligentes.',
+                'Debes responder únicamente a partir del siguiente catálogo de Experticia y del marco del Derecho Informático:',
+                experticiaBase,
+                'REGLA ESTRICTA: Si la pregunta no pertenece a estas áreas o al Derecho Informático, indica amablemente que solo respondes consultas vinculadas a la sección Experticia en Derecho Informático.',
+                'Aclara siempre que la respuesta es orientativa y no sustituye asesoría jurídica formal.'
+            ].join('\n\n');
+
+            askAiBtnEl.disabled = true;
+            aiResponseTextEl.textContent = 'Analizando consulta según la sección Experticia...';
+
+            try {
+                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(keyVal)}`;
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        system_instruction: {
+                            parts: [{ text: systemInstruction }]
+                        },
+                        contents: [
+                            {
+                                role: 'user',
+                                parts: [{ text: userQuestion }]
+                            }
+                        ]
+                    })
+                });
+
+                const data = await res.json();
+                if (!res.ok) {
+                    throw new Error(data?.error?.message || `Error HTTP ${res.status}`);
+                }
+
+                const replyText = data?.candidates?.[0]?.content?.parts
+                    ?.map(p => p.text || '')
+                    .join('')
+                    .trim();
+
+                aiResponseTextEl.textContent = replyText || 'No se recibió contenido en la respuesta.';
+            } catch (err) {
+                aiResponseTextEl.textContent = `No se pudo completar la consulta: ${err.message}`;
+            } finally {
+                askAiBtnEl.disabled = false;
+            }
+        });
+    }
+
     const liveClockEl = document.getElementById('dialogLiveClock');
     const captchaQuestionEl = document.getElementById('captchaQuestion');
     const captchaInputEl = document.getElementById('captchaInput');
