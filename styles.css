@@ -508,15 +508,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
     gap: 12px;
-=======
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 }
 
 .acordeon-experticia summary::after {
     content: "+";
-<<<<<<< HEAD
     font-size: 1.35rem;
     font-weight: 800;
     color: var(--dorado);
@@ -525,33 +521,17 @@ body {
 
 .acordeon-experticia details[open] summary::after {
     content: "-";
-=======
-    font-size: 1.3rem;
-    color: var(--dorado);
-}
-
-.acordeon-experticia details[open] summary::after {
-    content: "−";
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 }
 
 .acordeon-experticia ul {
     margin-top: 10px;
-<<<<<<< HEAD
     padding-left: 20px;
-=======
-    padding-left: 18px;
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     border-top: 1px solid var(--gris-borde);
     padding-top: 10px;
 }
 
 .acordeon-experticia li {
-<<<<<<< HEAD
     margin-bottom: 6px;
-=======
-    margin-bottom: 5px;
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     color: var(--texto-secundario);
     font-size: 0.9rem;
 }
@@ -718,18 +698,13 @@ body {
     margin-bottom: 12px;
 }
 
-<<<<<<< HEAD
 .form-group label,
 .field-label-text {
-=======
-.form-group label {
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--texto-principal);
 }
 
-<<<<<<< HEAD
 /* Cuadro desplegable de Asunto (con la misma estética que Opciones dependientes) */
 .subject-dropdown-box {
     background: #f8fafc;
@@ -891,8 +866,6 @@ body {
     flex-shrink: 0;
 }
 
-=======
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 .label-with-counter {
     display: flex;
     justify-content: space-between;
@@ -911,10 +884,6 @@ body {
 }
 
 .form-group input,
-<<<<<<< HEAD
-=======
-.form-group select,
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 .form-group textarea {
     width: 100%;
     border: 1px solid #cbd5e1;
@@ -926,10 +895,6 @@ body {
 }
 
 .form-group input:focus,
-<<<<<<< HEAD
-=======
-.form-group select:focus,
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 .form-group textarea:focus {
     outline: none;
     border-color: var(--azul-corporativo);
@@ -1042,20 +1007,6 @@ body {
     gap: 8px;
 }
 
-<<<<<<< HEAD
-=======
-.btn-secondary-action {
-    background: var(--gris-fondo);
-    color: var(--azul-corporativo);
-    border: 1px solid var(--azul-corporativo);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 .btn-wa-choice {
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: var(--blanco);
@@ -1066,20 +1017,6 @@ body {
     font-weight: 700;
 }
 
-<<<<<<< HEAD
-=======
-.btn-decline-choice {
-    background: var(--blanco);
-    color: var(--texto-secundario);
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
->>>>>>> 4ebeffd9907a3bfe36d7511572a4fafa06914625
 .decision-status {
     margin-top: 8px;
     font-size: 0.78rem;
